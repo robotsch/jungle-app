@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get 'static_pages/faq'
   get 'static_pages/about'
   root to: 'products#index'
-  
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
