@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'static_pages/faq'
   get 'static_pages/about'
   root to: 'products#index'
+  
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
 
   resources :help, only: [:index]
   resources :faq, only: [:index]
