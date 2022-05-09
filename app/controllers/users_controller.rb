@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def new
   end
   
+  def before_save
+    self.email.downcase!
+  end
+
   def create
     user = User.new(user_params)
     if user.save
